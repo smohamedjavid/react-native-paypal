@@ -11,7 +11,7 @@
 
  export default class App extends Component {
   paypal() {
-     PayPal.initialize(PayPal.SANDBOX, 'AYdaFJcXcO1KdJ8J2BcjdE6X66I9Mch9KpuGYHssFOaCEc5QmVNOj1Y4K_N0sevMoDteYXm0dhh8rkaQ');
+     PayPal.initialize(PayPal.SANDBOX, 'AYdaFJcXcO1KdJ8J2BcjdE6X66I9Mch9KpuGYHssFOaCEc5QmVNOj1Y4K_N0sevMoDteYXm0dhh8rkaQ'); // 3 enviroments - NO_NETWORK, SANDBOX, PRODUCTION.    Pass the client ID as second argument
      PayPal.pay({
        price: '1149',
        currency: 'USD',
@@ -47,7 +47,7 @@
          <CardItem>
       <Button
         title="Buy Now with PayPal"
-        onPress={this.paypal}
+        onPress={this.paypal} //Calling the function paypal
       />
          </CardItem>
 
@@ -57,4 +57,4 @@
    }
  }
 
- //AYdaFJcXcO1KdJ8J2BcjdE6X66I9Mch9KpuGYHssFOaCEc5QmVNOj1Y4K_N0sevMoDteYXm0dhh8rkaQ
+
