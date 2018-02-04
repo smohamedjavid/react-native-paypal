@@ -1,6 +1,6 @@
  import React, { Component } from 'react';
- import { Text, Image, Button } from 'react-native';
- import { Header, Left, Right, Body, Icon, Card, CardItem, Content, Container } from 'native-base';
+ import { Text, Image } from 'react-native';
+ import { Header, Body, Icon, Right, CardItem, Content, Container, Thumbnail, Button } from 'native-base';
  import PayPal from 'react-native-paypal-wrapper';
 
  const Styles = {
@@ -11,7 +11,7 @@
 
  export default class App extends Component {
   paypal() {
-     PayPal.initialize(PayPal.SANDBOX, 'AYdaFJcXcO1KdJ8J2BcjdE6X66I9Mch9KpuGYHssFOaCEc5QmVNOj1Y4K_N0sevMoDteYXm0dhh8rkaQ');
+     PayPal.initialize(PayPal.SANDBOX, 'AYdaFJcXcO1KdJ8J2BcjdE6X66I9Mch9KpuGYHssFOaCEc5QmVNOj1Y4K_N0sevMoDteYXm0dhh8rkaQ'); // 3 enviroments - NO_NETWORK, SANDBOX, PRODUCTION
      PayPal.pay({
        price: '1149',
        currency: 'USD',
@@ -45,10 +45,9 @@
          </CardItem>
 
          <CardItem>
-      <Button
-        title="Buy Now with PayPal"
-        onPress={this.paypal}
-      />
+         <Button onPress={() => this.paypal()} transparent>
+         <Thumbnail source={require("./img/button.png")} style={{ height: 35, width: 168 }} />
+                   </Button>
          </CardItem>
 
          </Content>
